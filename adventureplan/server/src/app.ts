@@ -26,4 +26,6 @@ app.use((req, res) => {
 });
 
 //listen for requests:
+// let PORT = process.env.PORT || 5000;
 app.listen(5000, () => console.log("Server running"));
+// app.listen(PORT, () => console.log(`Server running ${PORT}`));

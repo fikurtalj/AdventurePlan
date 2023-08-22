@@ -1,5 +1,7 @@
 -- CREATE 
 CREATE DATABASE adventurePlan
+--create user
+CREATE USER techuser WITH PASSWORD "password";
 --create schemas:
 /*
 CREATE SCHEMA userData;
@@ -11,14 +13,16 @@ CREATE SCHEMA location;
      --user tables:
 CREATE TABLE userData.users
 (
-    userID  SERIAL  PRIMARY KEY,
+    userID  BIGSERIAL  PRIMARY KEY,
     userName VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
     firstName VARCHAR(255) NOT NULL,
     middleName VARCHAR(255) NULL,
     lastName VARCHAR(255) NOT NULL,
     emailAdress VARCHAR(128) NOT NULL,
     socialMedia VARCHAR(255)  NULL,
-    website VARCHAR(255) NULL
+    website VARCHAR(255) NULL,
+    UNIQUE (emailAdress)
 );
 
 CREATE TABLE userData.userType
